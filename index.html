@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+</head>
+
+<style>
+
+ body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(66,66,66);
+ }
+
+ div {
+    border: solid 1px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 80px;
+    color: rgb(38,165,38);
+    background-color: rgb(34,34,34);
+ }
+
+ input {
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px rgb(38,165,38);
+    outline: none;
+    background-color: white;
+ }
+
+ button {
+    background-color: rgb(38,165,38) ;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    color: aliceblue;
+    margin-top: 20px;
+ }
+
+ button:hover {
+    background-color: rgb(2,138,2) ;
+    cursor: pointer;
+ }
+
+ p {
+
+    text-align: center;
+    font-size: 10px;
+    margin: 10px;
+ }
+
+ .toggle-password {
+    cursor: pointer;
+    position: relative;
+    left: -30px;
+    top: 2px;
+ }
+
+ .toggle-password img {
+    width: 15px;
+    height: 15px;
+ }
+</style>
+
+<body>
+    <div>
+        <h1> Tela de Login</h1>
+        <input type="email" placeholder="E-mail"><br><br>
+        <input type="password" placeholder="Senha">
+        <span class="toggle-password">
+            <img src="http://img.icons8.com/material-outlined/24/000000/visible.png" alt="">
+        </span>
+       
+        <p>Esqueceu sua senha?</p>
+        <button>Entrar</button>
+    </div>
+
+    <script>
+        const togglePassword = document.querySelector('.toggle-password');
+        const password = document.querySelector('input[type="password"]');
+        let passwordVisible = false;
+      
+        togglePassword.addEventListener('click', function() {
+          passwordVisible = !passwordVisible;
+          const type = passwordVisible ? 'text' : 'password';
+          password.setAttribute('type', type);
+          togglePassword.innerHTML = passwordVisible ?
+            '<img src="http://img.icons8.com/material-outlined/24/000000/invisible.png">' :
+            '<img src="http://img.icons8.com/material-outlined/24/000000/visible.png">';
+        });
+      </script>
+      
+    
+</body>
+</html>
